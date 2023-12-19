@@ -1,0 +1,23 @@
+<div>
+  <h2>Order</h2>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <th>
+        <img
+          class="order-product-image"
+          [src]="product.featuredAsset?.source"
+        />
+      </th>
+      <th>{{ product.name }}</th>
+    </tr>
+  </tbody>
+</table>

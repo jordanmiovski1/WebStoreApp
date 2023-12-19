@@ -1,0 +1,22 @@
+.order-product-image {
+  height: 100px;
+}
+
+table {
+  width: 600px;
+  border-collapse: collapse;
+}
+
+thead > tr {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+th,
+td {
+  height: 40px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

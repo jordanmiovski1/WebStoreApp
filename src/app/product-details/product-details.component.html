@@ -1,0 +1,21 @@
+<ng-container *ngIf="product">
+  <div *ngIf="product !== undefined">
+    <div *ngIf="product.featuredAsset?.source">
+      <img
+        *ngFor="let asset of product.assets"
+        class="product-details-img"
+        [src]="asset?.source"
+      />
+    </div>
+    <h3>{{ product.name }}</h3>
+    <div>{{ product.description }}</div>
+    <div *ngFor="let variant of product.variants">
+      {{ variant.name }} {{ variant.price | currency }}
+    </div>
+  </div>
+  <div>
+    <button mat-flat-button color="primary" (click)="addToCart()">
+      Add to Cart<mat-icon fontIcon="add_shopping_cart"></mat-icon>
+    </button>
+  </div>
+</ng-container>

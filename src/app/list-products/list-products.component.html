@@ -1,0 +1,40 @@
+<mat-form-field class="example-full-width"
+  ><input
+    id="filter"
+    type="text"
+    #filterValue
+    matInput
+    [(ngModel)]="productName"
+    placeholder="Product name"
+/></mat-form-field>
+<button mat-stroked-button (click)="search()">Search</button>
+<button mat-stroked-button (click)="sortProductsAsc()">
+  Asc <mat-icon fontIcon="north"></mat-icon>
+</button>
+<button mat-stroked-button (click)="sortProductsDesc()">
+  Desc <mat-icon fontIcon="south"></mat-icon>
+</button>
+
+<div class="products">
+  <mat-card class="product-card" *ngFor="let item of products | async">
+    <mat-card-header>
+      <mat-card-title
+        ><a routerLink="details/{{ item.id }}">
+          {{ item.name }}
+        </a></mat-card-title
+      >
+    </mat-card-header>
+    <a routerLink="details/{{ item.id }}"
+      ><img
+        class="product-card-img"
+        mat-card-image
+        [src]="item.featuredAsset?.source"
+    /></a>
+
+    <mat-card-content>
+      <p>
+        {{ item.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
